@@ -11,7 +11,7 @@ import psutil #pip install psutil
 import pyjokes #pip install pyjokes
 
 engine =pyttsx3.init()
-voice_id = 'com.apple.speech.synthesis.voice.samantha'
+voice_id = 'com.apple.speech.synthesis.voice.samantha' #Change the voice_id if you want to change your assistant. Voice id could be found by running the voiceDetails() function
 engine.setProperty('voice', voice_id)
 def speak(audio):
     engine.say(audio)
@@ -73,13 +73,13 @@ def sendEmail(to,content):
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
-    server.login('abc@gmail.com',"password")
-    server.sendmail('abc@gmai.com',to,content)
+    server.login('abc@gmail.com',"password") #sender's gmail id and password
+    server.sendmail('abc@gmai.com',to,content) #sender's email
     server.close()
 
 def screenshot():
     img = pyautogui.screenshot()
-    img.save("/Users/raghav/Desktop/Jarvis/ss.png")
+    img.save("/Users/raghav/Desktop/Jarvis/ss.png") #path where screenshot will be saved
 
 def cpu():
     usage = str(psutil.cpu_percent())
@@ -118,7 +118,7 @@ if __name__ == "__main__":
                 speak("Unable to send email")
         elif 'search in chrome' in query:
             speak("What should I search?")
-            chromepath = '/Applications/Google Chrome.app %s'
+            chromepath = '/Applications/Google Chrome.app %s' #Path of the Google Chrome application - generally the exe file can be in Program files on Windows
             search = takeCommand().lower()
             wb.get(chromepath).open_new_tab(search+ '.com')
         elif 'logout' in query:
@@ -135,7 +135,7 @@ if __name__ == "__main__":
             speak("What should I remember?")
             data = takeCommand()
             speak("You said me to remember that" + data)
-            rem = open('data.txt','w')
+            rem = open('data.txt','w') #Create a blank file names data.txt in the folder where the this file is present.
             rem.write(data)
             rem.close()
         elif 'do you know anything' in query:
@@ -169,9 +169,3 @@ def voiceDetails():
         print("Age: %s" %voice.age) 
         print("Gender: %s" %voice.gender) 
         print("Languages Known: %s" %voice.languages)
-
-#takeCommand()
-#wishme()
-#speak("Hello! Aaisha at your service.")
-#date()
-#time()
