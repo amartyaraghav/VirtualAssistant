@@ -36,12 +36,12 @@ Tasks and its keywords:
 
 I have also added a function which when run gives you details of all the voices that can be changed for your assistant. 
 
-Example of giving commands: (Just include the keyword in your sentence)
-    1. Aisha, can you take the screenshot please.
-    2. Search on wikipedia for Python.
-    3. Show me the current device status.
-    4. Can you capture the screenshot for me.
-    5. What is today's date?
-                            etc.......
+Example of giving commands: (Just include the keyword in your sentence):
+1. Aisha, can you take the screenshot please.
+2. Search on wikipedia for Python.
+3. Show me the current device status.
+4. Can you capture the screenshot for me.
+5. What is today's date?
+etc.......
                             
  Go through the comment lines mentioned in the code before you run the code for the first time.
